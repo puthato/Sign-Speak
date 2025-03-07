@@ -1,0 +1,44 @@
+{
+  "api": {
+    "fastapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "signspeak"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "signspeak": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_signspeak_fastapiEnv": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "signspeak"
+        }
+      ]
+    },
+    "AMPLIFY_function_signspeak_secretsPathAmplifyAppId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "signspeak"
+        }
+      ]
+    }
+  }
+}
